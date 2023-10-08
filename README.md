@@ -18,3 +18,7 @@ then all zones which intersect with it's position, then all subzones which inter
 
 Comes with in-editor tools to help with editing these resources.
 
+## Screenshots
+
+![Full Screenshot](screenshots/screen_full.png)
+![Continent editor](screenshots/screen_continent.png)
