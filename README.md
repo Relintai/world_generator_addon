@@ -18,7 +18,7 @@ then all zones which intersect with it's position, then all subzones which inter
 
 Comes with in-editor tools to help with editing these resources.
 
-This addon was based on my [ESS Data](https://github.com/Relintai/ess_data) addon, and was developed in the broken seals repository. The rest of the commits can be found [here](https://github.com/Relintai/broken_seals/commits/master/game/addons/data_manager).
+This addon was based on my [ESS Data](https://github.com/Relintai/ess_data) addon, and was developed in the broken seals repository. The original dev commits can be found [here](https://github.com/Relintai/broken_seals/commits/master/game/addons/data_manager).
 
 ## Screenshots
 
