@@ -24,6 +24,11 @@ _global_script_classes=[ {
 "language": @"GDScript",
 "path": "res://addons/world_generator/resources/sub_zone_prop.gd"
 }, {
+"base": "TerrainLevelGenerator",
+"class": @"TerrainWorldGenerator",
+"language": @"GDScript",
+"path": "res://scripts/world_generators/TerrainWorldGenerator.gd"
+}, {
 "base": "Resource",
 "class": @"WorldGenBaseResource",
 "language": @"GDScript",
@@ -57,13 +62,19 @@ _global_script_class_icons={
 @"WorldGeneratorSettings": "",
 @"WorldGenBaseResource": "",
 @"WorldGenWorld": "",
-@"Zone": ""
+@"Zone": "",
+@"TerrainWorldGenerator": ""
 }
 
 [application]
 
 config/name="World Generator"
+run/main_scene="res://terraman/Terraman.tscn"
 config/icon="res://icon.png"
+
+[editor_plugins]
+
+enabled=PoolStringArray( "res://addons/world_generator/plugin.cfg" )
 
 [physics]
 
