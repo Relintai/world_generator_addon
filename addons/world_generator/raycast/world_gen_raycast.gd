@@ -25,7 +25,7 @@ func next() -> bool:
 func size() -> int:
 	return base_resources.size()
 
-# base_resource -> WorldGenBaseResource
+# WorldGenBaseResource (can't explicitly add -> cyclic dependency)
 func add_data(base_resource, local_pos : Vector2, local_uv : Vector2) -> void:
 	base_resources.append(base_resource)
 	local_positions.append(local_pos)

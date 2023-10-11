@@ -2,7 +2,7 @@ tool
 extends "res://addons/world_generator/resources/world_gen_base_resource.gd"
 class_name SubZone
 
-export(Array) var subzone_props : Array
+export(Array, SubZoneProp) var subzone_props : Array
 
 func get_content() -> Array:
 	return subzone_props

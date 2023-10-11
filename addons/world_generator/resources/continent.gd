@@ -2,7 +2,7 @@ tool
 extends "res://addons/world_generator/resources/world_gen_base_resource.gd"
 class_name Continent
 
-export(Array) var zones : Array
+export(Array, Zone) var zones : Array
 
 func get_content() -> Array:
 	return zones
