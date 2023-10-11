@@ -15,15 +15,13 @@ var editor_scene = null
 var tool_button : ToolButton = null
 
 func _enter_tree():
-	add_custom_type("WorldGeneratorSettings", "Resource", SWorldGeneratorSettings, null)
-	
-	add_custom_type("WorldGenBaseResource", "Resource", SWorldGenBaseResource, null)
-	#Don't change the base to "WorldGenBaseResource" else it will complain about a non-existant class
-	#Also it works perfectly like this
-	add_custom_type("WorldGenWorld", "Resource", SWorldGenWorld, null)
-	add_custom_type("Continent", "Resource", SContinent, null)
-	add_custom_type("Zone", "Resource", SZone, null)
-	add_custom_type("SubZone", "Resource", SSubZone, null)
+#	add_custom_type("WorldGeneratorSettings", "Resource", SWorldGeneratorSettings, null)
+#
+#	add_custom_type("WorldGenBaseResource", "Resource", SWorldGenBaseResource, null)
+#	add_custom_type("WorldGenWorld", "WorldGenBaseResource", SWorldGenWorld, null)
+#	add_custom_type("Continent", "WorldGenBaseResource", SContinent, null)
+#	add_custom_type("Zone", "WorldGenBaseResource", SZone, null)
+#	add_custom_type("SubZone", "WorldGenBaseResource", SSubZone, null)
 
 	editor_scene = editor_packed_scene.instance()
 	editor_scene.set_plugin(self)
@@ -32,13 +30,13 @@ func _enter_tree():
 	tool_button.hide()
 
 func _exit_tree():
-	remove_custom_type("WorldGeneratorSettings")
-	
-	remove_custom_type("WorldGenBaseResource")
-	remove_custom_type("WorldGenWorld")
-	remove_custom_type("Continent")
-	remove_custom_type("Zone")
-	remove_custom_type("SubZone")
+#	remove_custom_type("WorldGeneratorSettings")
+#
+#	remove_custom_type("WorldGenBaseResource")
+#	remove_custom_type("WorldGenWorld")
+#	remove_custom_type("Continent")
+#	remove_custom_type("Zone")
+#	remove_custom_type("SubZone")
 
 	remove_control_from_bottom_panel(editor_scene)
 
