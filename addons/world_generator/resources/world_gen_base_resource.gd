@@ -198,16 +198,16 @@ func get_editor_class() -> String:
 func get_editor_additional_text() -> String:
 	return ""
 	
-func eitor_draw_additional(control : Control) -> void:
-	_eitor_draw_additional(control)
+func editor_draw_additional(control : Control) -> void:
+	_editor_draw_additional(control)
 	
-func _eitor_draw_additional(control : Control) -> void:
+func _editor_draw_additional(control : Control) -> void:
 	pass
 	
-func eitor_draw_additional_background(control : Control) -> void:
-	_eitor_draw_additional_background(control)
+func editor_draw_additional_background(control : Control) -> void:
+	_editor_draw_additional_background(control)
 	
-func _eitor_draw_additional_background(control : Control) -> void:
+func _editor_draw_additional_background(control : Control) -> void:
 	pass
 
 func setup_property_inspector(inspector) -> void:
