@@ -204,10 +204,10 @@ func eitor_draw_additional(control : Control) -> void:
 func _eitor_draw_additional(control : Control) -> void:
 	pass
 	
-func editor_draw_additional_background(control : Control) -> void:
-	_editor_draw_additional_background(control)
+func eitor_draw_additional_background(control : Control) -> void:
+	_eitor_draw_additional_background(control)
 	
-func _editor_draw_additional_background(control : Control) -> void:
+func _eitor_draw_additional_background(control : Control) -> void:
 	pass
 
 func setup_property_inspector(inspector) -> void:
