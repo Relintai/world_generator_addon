@@ -16,6 +16,9 @@ var editor_scene : Node = null
 
 var tool_button : ToolButton = null
 
+func edit_resource(resource: Resource) -> void:
+	get_editor_interface().edit_resource(resource)
+
 func _enter_tree():
 #	add_custom_type("WorldGeneratorSettings", "Resource", SWorldGeneratorSettings, null)
 #

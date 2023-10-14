@@ -5,13 +5,15 @@ var _resource_type : String = "Resource"
 var _resource : Resource = null
 var _plugin : EditorPlugin = null
 
-signal on_resource_changed(new_res)
+var _picker : EditorResourcePicker = null
 
-func _enter_tree():
-	$ResourceButton.set_drag_forwarding(self)
+signal on_resource_changed(new_res)
 
 func set_resource_type(type : String) -> void:
 	_resource_type = type
+	
+	if _picker:
+		_picker.base_type = _resource_type
 	
 func set_resource(res : Resource) -> void:
 	if res && !res.is_class(_resource_type):
@@ -21,21 +23,40 @@ func set_resource(res : Resource) -> void:
 
 	_resource = res
 	
-	refresh_ui()
+	if _picker:
+		_picker.edited_resource = _resource
 	
 	if emit:
 		emit_signal("on_resource_changed", _resource)
 
-func refresh_ui() -> void:
-	if _resource:
-		var text : String = _resource.resource_name
-		
-		if text == "":
-			text = _resource.get_class()
+func set_plugin(plugin : EditorPlugin) -> void:
+	_plugin = plugin
+
+func _enter_tree():
+	if Engine.is_editor_hint():
+		_picker = EditorResourcePicker.new()
+		_picker.set_h_size_flags(SIZE_EXPAND_FILL)
+		_picker.set_v_size_flags(SIZE_EXPAND_FILL)
+		add_child(_picker)
 			
-		$ResourceButton.text = text
-	else:
-		$ResourceButton.text = "[null]"
+		if _resource:
+			_picker.edited_resource = _resource
+			
+		_picker.base_type = _resource_type
+		
+		_picker.connect(@"resource_changed", self, "_on_resource_changed")
+		_picker.connect(@"resource_selected", self, "_on_resource_selected")
+
+func _on_resource_changed(resource: Resource) -> void:
+	var emit : bool = resource != _resource
+
+	_resource = resource
+	
+	if emit:
+		emit_signal("on_resource_changed", _resource)
+
+func _on_resource_selected(resource: Resource, edit: bool) -> void:
+	_plugin.edit_resource(resource)
 
 func on_clear_button_pressed() -> void:
 	if _resource:
@@ -45,36 +66,3 @@ func on_resource_button_pressed() -> void:
 	if _resource && _plugin:
 		_plugin.get_editor_interface().inspect_object(_resource)
 
-#examples
-#{files:[res://modules/planets/test_planet/test_world.tres], from:@@4176:[Tree:9070], type:files}
-#{from:Button:[Button:917001], resource:[Resource:26180], type:resource}
-
-func can_drop_data_fw(position, data, from_control):
-	return true
-	
-func drop_data_fw(position, data, from_control):
-	if data["type"] == "resource":
-		var res : Resource = data["resource"]
-		set_resource(res)
-	elif data["type"] == "files":
-		var files : Array = data["files"]
-		
-		for f in files:
-			var res : Resource = load(f)
-			set_resource(res)
-			return
-
-func get_drag_data_fw(position, from_control):
-	if !_resource:
-		return
-		
-	var d : Dictionary = Dictionary()
-	
-	d["from"] = self
-	d["resource"] = _resource
-	d["type"] = "resource"
-	
-	return d
-
-func set_plugin(plugin : EditorPlugin) -> void:
-	_plugin = plugin
