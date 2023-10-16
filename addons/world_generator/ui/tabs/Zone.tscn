@@ -23,27 +23,27 @@ size_flags_horizontal = 3
 [node name="RectEditor" parent="HSplitContainer" instance=ExtResource( 4 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 735.0
+margin_right = 585.0
 margin_bottom = 600.0
 size_flags_horizontal = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HSplitContainer"]
-margin_left = 747.0
+margin_left = 597.0
 margin_right = 1024.0
 margin_bottom = 600.0
 
 [node name="ContinentOptionButton" type="OptionButton" parent="HSplitContainer/VBoxContainer"]
-margin_right = 277.0
+margin_right = 427.0
 margin_bottom = 20.0
 
 [node name="ZoneOptionButton" type="OptionButton" parent="HSplitContainer/VBoxContainer"]
 margin_top = 24.0
-margin_right = 277.0
+margin_right = 427.0
 margin_bottom = 44.0
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="HSplitContainer/VBoxContainer"]
 margin_top = 48.0
-margin_right = 277.0
+margin_right = 427.0
 margin_bottom = 600.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -51,16 +51,13 @@ size_flags_vertical = 3
 [node name="ResourcePropertyList" parent="HSplitContainer/VBoxContainer/HBoxContainer2" instance=ExtResource( 2 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 100.0
+margin_right = 250.0
 margin_bottom = 552.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HSplitContainer/VBoxContainer/HBoxContainer2"]
-margin_left = 104.0
-margin_right = 277.0
+margin_left = 254.0
+margin_right = 427.0
 margin_bottom = 552.0
-size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Label" type="Label" parent="HSplitContainer/VBoxContainer/HBoxContainer2/VBoxContainer"]
@@ -100,6 +97,7 @@ margin_right = 173.0
 margin_bottom = 552.0
 class_types = 2
 
+[connection signal="visibility_changed" from="." to="." method="_on_Zone_visibility_changed"]
 [connection signal="pressed" from="HSplitContainer/VBoxContainer/HBoxContainer2/VBoxContainer/HBoxContainer/AddButton" to="HSplitContainer/VBoxContainer/HBoxContainer2/VBoxContainer/DataList" method="add_button_pressed"]
 [connection signal="pressed" from="HSplitContainer/VBoxContainer/HBoxContainer2/VBoxContainer/HBoxContainer/DeleteButton" to="HSplitContainer/VBoxContainer/HBoxContainer2/VBoxContainer/DataList" method="delete_button_pressed"]
 [connection signal="pressed" from="HSplitContainer/VBoxContainer/HBoxContainer2/VBoxContainer/HBoxContainer/Duplicate" to="HSplitContainer/VBoxContainer/HBoxContainer2/VBoxContainer/DataList" method="duplicate_button_pressed"]

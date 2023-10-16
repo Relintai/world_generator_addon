@@ -166,3 +166,7 @@ func on_sub_zone_item_selected(idx : int) -> void:
 func on_request_item_edit(resource : WorldGenBaseResource) -> void:
 	emit_signal("request_item_edit", edited_continent, edited_zone, edited_sub_zone, resource)
 	
+
+func _on_SubZone_visibility_changed() -> void:
+	if visible:
+		refresh()

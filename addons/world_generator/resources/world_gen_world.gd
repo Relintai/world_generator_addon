@@ -34,9 +34,6 @@ func remove_content_entry(entry : WorldGenBaseResource) -> void:
 			emit_changed()
 			return
 
-func setup_property_inspector(inspector) -> void:
-	.setup_property_inspector(inspector)
-	
 func generate_terra_chunk(chunk: TerrainChunk, pseed : int, spawn_mobs: bool) -> void:
 	var p : Vector2 = Vector2(chunk.get_position_x(), chunk.get_position_z())
 

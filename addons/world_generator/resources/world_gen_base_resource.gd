@@ -209,11 +209,3 @@ func editor_draw_additional_background(control : Control) -> void:
 	
 func _editor_draw_additional_background(control : Control) -> void:
 	pass
-
-func setup_property_inspector(inspector) -> void:
-	inspector.add_slot_line_edit("get_name", "set_name", "Name")
-	inspector.add_slot_rect2("get_rect", "set_rect", "Rect", 1)
-	inspector.add_slot_vector2i("get_min_size", "set_min_size", "Min Size", 1)
-	inspector.add_slot_vector2i("get_max_size", "set_max_size", "Max Size", 1)
-	inspector.add_slot_bool("get_locked", "set_locked", "Locked")
-

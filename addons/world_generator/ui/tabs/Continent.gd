@@ -76,3 +76,7 @@ func on_item_selected(idx : int) -> void:
 func on_request_item_edit(resource : WorldGenBaseResource) -> void:
 	emit_signal("request_item_edit", edited_continent, resource)
 	
+	
+func _on_Continent_visibility_changed() -> void:
+	if visible:
+		refresh()

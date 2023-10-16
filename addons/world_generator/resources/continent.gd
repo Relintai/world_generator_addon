@@ -33,6 +33,3 @@ func remove_content_entry(entry : WorldGenBaseResource) -> void:
 			zones.remove(i)
 			emit_changed()
 			return
-
-func setup_property_inspector(inspector) -> void:
-	.setup_property_inspector(inspector)

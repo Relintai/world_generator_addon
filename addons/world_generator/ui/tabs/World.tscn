@@ -18,18 +18,19 @@ script = ExtResource( 5 )
 margin_right = 839.0
 margin_bottom = 564.0
 size_flags_horizontal = 3
+split_offset = 180
 
 [node name="RectEditor" parent="HSplitContainer" instance=ExtResource( 7 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 727.0
+margin_right = 577.0
 margin_bottom = 564.0
 size_flags_horizontal = 3
 
 [node name="ResourcePropertyList" parent="HSplitContainer" instance=ExtResource( 2 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 739.0
+margin_left = 589.0
 margin_right = 839.0
 margin_bottom = 564.0
 
@@ -74,6 +75,7 @@ margin_top = 42.0
 margin_right = 173.0
 margin_bottom = 564.0
 
+[connection signal="visibility_changed" from="." to="." method="_on_World_visibility_changed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/AddButton" to="VBoxContainer/DataList" method="add_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/DeleteButton" to="VBoxContainer/DataList" method="delete_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/Duplicate" to="VBoxContainer/DataList" method="duplicate_button_pressed"]
