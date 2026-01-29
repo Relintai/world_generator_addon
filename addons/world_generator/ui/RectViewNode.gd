@@ -93,7 +93,7 @@ func set_edited_resource(res : WorldGenBaseResource):
 		_edited_resource_font_color = edited_resource.get_editor_font_color()
 		_editor_additional_text = edited_resource.get_editor_additional_text()
 	
-	edited_resource.connect("changed", self, "on_edited_resource_changed")
+		edited_resource.connect("changed", self, "on_edited_resource_changed")
 	
 	refresh()
 
