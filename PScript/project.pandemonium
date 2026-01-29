@@ -9,20 +9,20 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "Resource",
+"base": "WorldGenBaseResource",
 "class": @"Continent",
-"language": @"GDScript",
-"path": "res://addons/world_generator/resources/continent.gd"
+"language": @"PScript",
+"path": "res://addons/world_generator/resources/continent.p"
 }, {
-"base": "Resource",
+"base": "WorldGenBaseResource",
 "class": @"SubZone",
-"language": @"GDScript",
-"path": "res://addons/world_generator/resources/subzone.gd"
+"language": @"PScript",
+"path": "res://addons/world_generator/resources/subzone.p"
 }, {
-"base": "Resource",
+"base": "WorldGenBaseResource",
 "class": @"SubZoneProp",
-"language": @"GDScript",
-"path": "res://addons/world_generator/resources/sub_zone_prop.gd"
+"language": @"PScript",
+"path": "res://addons/world_generator/resources/sub_zone_prop.p"
 }, {
 "base": "TerrainLevelGenerator",
 "class": @"TerrainWorldGenerator",
@@ -31,28 +31,28 @@ _global_script_classes=[ {
 }, {
 "base": "Resource",
 "class": @"WorldGenBaseResource",
-"language": @"GDScript",
-"path": "res://addons/world_generator/resources/world_gen_base_resource.gd"
+"language": @"PScript",
+"path": "res://addons/world_generator/resources/world_gen_base_resource.p"
 }, {
 "base": "Reference",
 "class": @"WorldGenRaycast",
-"language": @"GDScript",
-"path": "res://addons/world_generator/raycast/world_gen_raycast.gd"
+"language": @"PScript",
+"path": "res://addons/world_generator/raycast/world_gen_raycast.p"
 }, {
-"base": "Resource",
+"base": "WorldGenBaseResource",
 "class": @"WorldGenWorld",
-"language": @"GDScript",
-"path": "res://addons/world_generator/resources/world_gen_world.gd"
+"language": @"PScript",
+"path": "res://addons/world_generator/resources/world_gen_world.p"
 }, {
 "base": "Resource",
 "class": @"WorldGeneratorSettings",
-"language": @"GDScript",
-"path": "res://addons/world_generator/resources/world_generator_settings.gd"
+"language": @"PScript",
+"path": "res://addons/world_generator/resources/world_generator_settings.p"
 }, {
-"base": "Resource",
+"base": "WorldGenBaseResource",
 "class": @"Zone",
-"language": @"GDScript",
-"path": "res://addons/world_generator/resources/zone.gd"
+"language": @"PScript",
+"path": "res://addons/world_generator/resources/zone.p"
 } ]
 _global_script_class_icons={
 "Continent": "",
@@ -78,7 +78,7 @@ default_language=2
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/world_generator/plugin.cfg" )
+enabled=PoolStringArray(  )
 
 [physics]
 
