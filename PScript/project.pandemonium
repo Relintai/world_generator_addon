@@ -78,7 +78,7 @@ default_language=2
 
 [editor_plugins]
 
-enabled=PoolStringArray(  )
+enabled=PoolStringArray( "res://addons/world_generator/plugin.cfg" )
 
 [physics]
 
