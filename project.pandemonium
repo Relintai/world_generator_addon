@@ -55,15 +55,15 @@ _global_script_classes=[ {
 "path": "res://addons/world_generator/resources/zone.gd"
 } ]
 _global_script_class_icons={
-@"WorldGenRaycast": "",
-@"Continent": "",
-@"SubZone": "",
-@"SubZoneProp": "",
-@"WorldGeneratorSettings": "",
-@"WorldGenBaseResource": "",
-@"WorldGenWorld": "",
-@"Zone": "",
-@"TerrainWorldGenerator": ""
+"Continent": "",
+"SubZone": "",
+"SubZoneProp": "",
+"TerrainWorldGenerator": "",
+"WorldGenBaseResource": "",
+"WorldGenRaycast": "",
+"WorldGenWorld": "",
+"WorldGeneratorSettings": "",
+"Zone": ""
 }
 
 [application]
@@ -71,6 +71,10 @@ _global_script_class_icons={
 config/name="World Generator"
 run/main_scene="res://terraman/Terraman.tscn"
 config/icon="res://icon.png"
+
+[editor]
+
+default_language=2
 
 [editor_plugins]
 
