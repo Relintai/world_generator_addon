@@ -26,8 +26,8 @@ _global_script_classes=[ {
 }, {
 "base": "TerrainLevelGenerator",
 "class": @"TerrainWorldGenerator",
-"language": @"GDScript",
-"path": "res://scripts/world_generators/TerrainWorldGenerator.gd"
+"language": @"PScript",
+"path": "res://scripts/world_generators/TerrainWorldGenerator.p"
 }, {
 "base": "Resource",
 "class": @"WorldGenBaseResource",

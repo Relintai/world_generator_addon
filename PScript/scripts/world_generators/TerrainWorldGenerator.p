@@ -1,6 +1,6 @@
-tool
-extends TerrainLevelGenerator
-class_name TerrainWorldGenerator
+tool;
+extends TerrainLevelGenerator;
+class_name TerrainWorldGenerator;
 
 # Copyright (c) 2019-2021 Péter Magyar
 #
@@ -22,34 +22,41 @@ class_name TerrainWorldGenerator
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-export(int) var _level_seed : int
-export(bool) var _spawn_mobs : bool
-export(Resource) var world_gen_world : Resource = null
+export(int) int _level_seed;
+export(bool) bool _spawn_mobs;
+export(Resource) Resource world_gen_world = null;
 
-var _world : TerrainWorld
-var _library : TerrainLibrary
+TerrainWorld _world;
+TerrainLibrary _library;
 
-func setup(world : TerrainWorld, level_seed : int, spawn_mobs : bool, library: TerrainLibrary) -> void:
-	_level_seed = level_seed
-	_spawn_mobs = spawn_mobs
-	_library = library
+void setup(TerrainWorld world, int level_seed, bool spawn_mobs, TerrainLibrary library) {
+	_level_seed = level_seed;
+	_spawn_mobs = spawn_mobs;
+	_library = library;
 	
-	if world_gen_world != null:
-		world_gen_world.setup_terra_library(_library, _level_seed)
-		_library.refresh_rects()
+	if world_gen_world != null {
+		world_gen_world.setup_terra_library(_library, _level_seed);
+		_library.refresh_rects();
+	}
+}
 
-func get_spawn_chunk_position() -> Vector2:
-	if world_gen_world != null:
-		var spawners : Array = world_gen_world.get_spawn_positions()
+Vector2 get_spawn_chunk_position() {
+	if world_gen_world != null {
+		Array spawners = world_gen_world.get_spawn_positions();
 		
-		if spawners.size() > 0:
-			var v : Vector2 = spawners[0][1]
-			return v
-		
-	return Vector2()
-
-func _generate_chunk(chunk : TerrainChunk) -> void:
-	if world_gen_world == null:
-		return
+		if spawners.size() > 0 {
+			Vector2 v = spawners[0][1];
+			return v;
+		}
+	}
 	
-	world_gen_world.generate_terra_chunk(chunk, _level_seed, _spawn_mobs)
+	return Vector2();
+}
+
+void _generate_chunk(TerrainChunk chunk) {
+	if world_gen_world == null {
+		return;
+	}
+	
+	world_gen_world.generate_terra_chunk(chunk, _level_seed, _spawn_mobs);
+}
