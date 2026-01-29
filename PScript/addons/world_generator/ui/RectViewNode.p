@@ -131,6 +131,10 @@ void _notification(int p_what) {
 
 #based on / ported from engine/scene/gui/dialogs.h and .cpp
 void _gui_input(InputEvent p_event) {
+	if !edited_resource {
+		return;
+	}
+	
 	if (p_event is InputEventMouseButton) && (p_event.get_button_index() == BUTTON_LEFT) {
 		InputEventMouseButton mb = p_event as InputEventMouseButton;
 		
